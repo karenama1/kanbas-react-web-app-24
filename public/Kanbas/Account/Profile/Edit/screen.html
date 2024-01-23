@@ -1,0 +1,98 @@
+<html>
+    <head></head>
+    <body>
+        <table width="100%">
+            <tbody>
+                <tr>
+                    <td valign="top"><ul>
+                        <li><a href="/Kanbas/Account/Navigation/index.html">
+                           Account</a></li>
+                        <li><a href="/Kanbas/Account/Profile/index.html">
+                            Profile</a></li>
+                        <li><a href="/Kanbas/Course/Home/index.html">
+                            Home</a></li>
+                        <li>
+                         <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
+                        </li>
+                        <li>
+                         <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Grade/screen.html">Grades</a>
+                        </li>
+                        <li>
+                         <a href="/Kanbas/Calendar/index.html">Calendar</a>
+                        </li>
+                        <li><a href="/Kanbas/Inbox/index.html">Inbox</a>
+                        </li>
+                        <li><a href="/kanbas/History/index.html">History</a>
+                        </li>
+                        <li><a href="/kanbas/Studio/index.html">Studio</a>
+                        </li>
+                        <li><a href="/kanbas/Commons/index.html">Commons</a>
+                        </li>
+                        <li><a href="/kanbas/Help/index.html">Help</a>
+                        </li>
+                    </ul></td>
+                    <td valign="top"><div class="container">
+                        <div>
+                          <h6>Jose Annunziato's Profile</h6>
+                          <hr />
+                          <h3>Jose Annunziato</h3>
+                          <form id="editProfileForm" action="./Edit/index.html">
+                            <button id="editProfileButton" class="button">Edit Profile</button>
+                          </form>
+                          <div class="profile-info">
+                            <h2>Contact</h2>
+                                <p>No registered service. You can add some on the <a href="../Setting/index.html">Setting</a> page.</p>
+                            <h2>Biography</h2>
+                                <p>Faculty, Software Engineer, AI, Space, and Renewable Enthusiast.</p>
+                            <h2>Links</h2>
+                                <p><a href="https://www.youtube.com/" target="_blank">YouTube</a></p>
+                          </div>
+                        </div> 
+                    </td>
+                    <td valign="top"><h2>Jose Annunziato</h2>
+                        <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" value="Jose Annunziato" required>
+                
+                        <label for="pronouns">Pronouns:</label>
+                            <select id="pronouns" name="pronouns">
+                                <option value="none" selected>None</option>
+                                <option value="he/him">He/Him</option>
+                                <option value="she/her">She/Her</option>
+                                <option value="they/them">They/Them</option>
+                            </select>
+                        <br />
+                        <br />
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title">
+                        <br />
+                        <br />
+                        <h3>Contact</h3>
+                        <p>No registered service. You can add some on the <a href="../Setting/index.html">Setting</a> page.</p>
+                        <h3>Biography</h3>
+                            <p>Faculty, Software Engineer, AI, Space, and Renewable Enthusiast.</p>
+                            <textarea id="biography" name="biography" rows="4" placeholder="Faculty, Software Engineer, AI, Space, and Renewable Enthusiast."></textarea><br />
+                        <br />
+                        <br />
+                        <h3>Links</h3>
+                        <ul>
+                            <li>
+                              <a href="https://www.youtube.com/" target="_blank">YouTube Links to external site</a>
+                            </li>
+                          </ul>
+                      
+                        <button type="button" id="addLinkButton" >Add another link</button><br/>
+                        <button type="submit" id="saveProfileButton">Save Profile</button>
+                        <button type="button" id="cancelEditingButton">Cancel Editing</button><br/>
+                        <button type="submit" id="saveProfileButton">Save Profile</button>
+                        <button type="button" id="cancelEditingButton" >Cancel</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
