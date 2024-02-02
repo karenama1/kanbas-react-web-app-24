@@ -1,2 +1,11 @@
-.idea
-node_modules
+# .gitignore
+
+# IDE-specific folders
+.vscode/
+.idea/
+
+# macOS system file
+.DS_Store
+
+# Node.js specific folders
+node_modules/
