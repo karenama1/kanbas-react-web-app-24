@@ -57,9 +57,15 @@
             </tr>
         </table>
         <button type="button" id="addLinkButton" >Add another link</button><br/>
-        <button type="submit" id="saveProfileButton">Save Profile</button>
+        <button type="submit" id="saveProfileButton" onclick="navigateToProfile()">Save Profile</button>
         <button type="button" id="cancelEditingButton">Cancel Editing</button><br/>
-        <button type="submit" id="saveProfileButton">Save Profile</button>
+        <button type="submit" id="editProfileButton">Edit Profile</button>
         <button type="button" id="cancelEditingButton" >Cancel</button>
+  
+        <script>
+            function navigateToProfile() {
+                window.location.href = "/Kanbas/Account/Profile/screen.html";
+            }
+        </script>
     </body>
 </html>
