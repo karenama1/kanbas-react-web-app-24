@@ -1,26 +1,48 @@
 <html>
     <head>
-        <body>
-            <h4>Course Status</h4>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <button>Unpublish</button>
-                        </td>
-                        <td>
-                            <button>Publish</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <button>Import Existing Content</button><br />
-            <button>Import from Commons</button><br />
-            <button>Choose Home Page</button><br />
-            <button>View Course Stream</button><br />
-            <button>New Announcement</button><br />
-            <button>New Analytics</button><br />
-            <button>View Course Notification</button><br />
-        </body>
+        <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Home/Status/index.css" />
+        <style>
+            .publish-wrapper {
+                display: inline-block;
+                background-color: forestgreen;
+                color: white;
+                opacity: 0.5; /* Adjust opacity as needed */
+            }
+    
+            .publish-button {
+                cursor: not-allowed;
+            }
+        </style>
     </head>
+    <body>
+        <h4>Course Status</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <button>
+                            <i class="fa fa-ban" aria-hidden="true"></i>Unpublish
+                        </button>
+                    </td>
+                    <td>
+                        <span class="publish-wrapper">
+                            <button class="publish-button" disabled>
+                                <i class="fa fa-check-square-o" aria-hidden="true"></i> Publish
+                            </button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table></br>
+        <button><i class="fa fa-file-o" aria-hidden="true"></i>Import Existing Content
+        </button><br />
+        <button><i class="fa fa-sign-in" aria-hidden="true"></i>Import from Commons
+        </button><br />
+        <button><i class="fa fa-life-ring" aria-hidden="true"></i>Choose Home Page</button><br />
+        <button><i class="fa fa-bar-chart" aria-hidden="true"></i>View Course Stream</button><br />
+        <button><i class="fa fa-bullhorn" aria-hidden="true"></i>New Announcement</button><br />
+        <button><i class="fa fa-bar-chart" aria-hidden="true"></i>New Analytics</button><br />
+        <button><i class="fa fa-bell" aria-hidden="true"></i>View Course Notification</button><br />
+    </body>
 </html>

@@ -1,0 +1,7 @@
+.flex-container {
+    text-align: right;
+}
+
+.flex-container button {
+    margin-bottom: 5px; /* Add margin between buttons */
+}

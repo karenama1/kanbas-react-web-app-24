@@ -1,39 +1,58 @@
 <html>
     <head>
-
+        <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/Kanbas/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
     </head>
     <body>
-        <table>
-            <tbody>
-                <tr>
-                    <td valign="top"> <ul>
-                        <li><a href="/Kanbas/Account/Navigation/index.html">
-                           Account</a></li>
-                        <li>
-                         <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
-                        </li>
-                        <li>
-                         <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                        </li>
-                        <li>
-                         <a href="/Kanbas/Calendar/index.html">Calendar</a>
-                        </li>
-                        <li><a href="/Kanbas/Inbox/index.html">Inbox</a>
-                        </li>
-                        <li><a href="/kanbas/History/index.html">History</a>
-                        </li>
-                        <li><a href="/kanbas/Studio/index.html">Studio</a>
-                        </li>
-                        <li><a href="/kanbas/Commons/index.html">Commons</a>
-                        </li>
-                        <li><a href="/kanbas/Help/index.html">Help</a>
-                        </li>
-                    </ul></td>
-                    <td valign="top"><ul>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><span style="color: red;">CS5610.35159.202430</span></li>
+                        <li class="breadcrumb-item active" aria-current="page">Grades</HTML></li>
+                        </ol>
+                    </nav>
+                    <hr />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 d-none d-md-block">
+                  <ul class="wd-kanbas-navigation">
+                    <!-- Copy Kanbas Navigation Here -->
+                    <li><a href="http://northeastern.edu"><i class="fa fa-university" aria-hidden="true"></i>N</a></li>
+                      <li><a href="/Kanbas/Account/Profile/screen.html"><i class="fa fa-user-o" aria-hidden="true"></i>
+                         Account</a></li>
+                      <li class="wd-active">
+                          <a href="/Kanbas/Dashboard/screen.html">
+                              <i class="fa fa-tachometer"></i> Dashboard</a>
+                          </li>
+                     <li>
+                       <a href="/Kanbas/Courses/Home/screen.html">
+                          <i class= "fa fa-book"></i>Courses</a>
+                      </li>
+                      <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
+                      <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i>
+                          <span>Inbox</span>
+                          </a>
+                      </li>
+                      <li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>History</a></li>
+                      <li><a href="#"><i class="fa fa-creative-commons" aria-hidden="true"></i>Commons</a></li>
+                      <li><a href="#"><i class="fa fa-desktop" aria-hidden="true"></i>Studio</a></li>
+                      <li><a href="#"><i class="fa fa-question" aria-hidden="true"></i>Help</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-2 d-none d-md-block">
+                    <ul class="wd-navigation">
+                      <!-- Copy Course Navigation Here -->
                         <li>
                             <a href="/Kanbas/Courses/Home/screen.html">
                             Home</a></li>
-                        <li><a href="/Kanbas/Courses/Modules/screen.html">
+                        <li  class="wd-active"><a href="/Kanbas/Courses/Modules/screen.html">
                             Modules</a></li>
                         <li><a href="/Kanbas/Courses/Piazza/index.html">
                             Piazza</a></li>
@@ -65,71 +84,12 @@
                             Collaboration</a></li>
                         <li><a href="/Kanbas/Courses/Syllabus/screen.html">
                             Syllabus</a></li>
-                        <li><a href="/Kanbas/Courses/Settings/index.html">
+                        <li><a href="/Kanbas/Account/Setting/CourseDetail/screen.html">
                             Settings</a></li>
-                        </ul></td>
-                    <td valign="top">        <table width="100%">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <select>
-                                        <option>Gradebook</option>
-                                        <option>Change Gradebook view </option>
-                                        <option>Traditionla Gradebook</option>
-                                        <option>Individual Gradebook</option>
-                                        <option>Gradebook History</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <button>Shortcuts</button>
-                                    <button>Import</button>
-                                    <select>
-                                        <option>Export</option>
-                                        <option>Export Current Gradebook View</option>
-                                        <option>Export Entire Gradebook</option>
-                                    </select>
-                                    </button>
-                                    <button>Settings</button> 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>Student Names</h4>
-                                    <input  /><br/>
-                                    <select>
-                                        <option>Alice Wonderland</option>
-                                        <option>Princes Leia</option>
-                                        <option>Luke Skywalker</option>
-                                        <option>Han Solo</option>
-                                        <option>Lando Calresian</option>
-                                        <option>Boba Fet</option>
-                                        <option>Darth Vader</option>
-                                        <option>Obi-Wan Kenobi</option>
-                                        <option>R2-D2</option>
-                                        <option>C-3PO</option>
-                                        <option>Yoda</option>
-                                        <option>Admiral Ackbar</option>
-                                    </select><br />
-                                </td>                   
-                                <td>
-                                    <h4>Assignment Names</h4> <input /><br />
-                                    <select>
-                                        <option>A1 SETUP</option>
-                                        <option>A2 HTML</option>
-                                        <option>A3 CSS</option>
-                                        <option>A4 BOOTSTRAP</option>
-                                        <option>A5 JAVASCRIPT</option>
-                                        <option>A6 REACT</option>
-                                        <option>A7 REDUX</option>
-                                        <option>A8 NODE</option>
-                                        <option>A9 MONGO</option>
-                                    </select><br />
-            
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button>Apply Filters</button>
-                    <table border="1">
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Student Name</th>
@@ -148,7 +108,7 @@
                             <tr>
                                 <td>Alice Wonderland</td>
                                 <td>98</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>87</td>
                                 <td>90</td>
                                 <td>89</td>
@@ -162,7 +122,7 @@
                                 <td>98</td>
                                 <td>80</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -171,7 +131,7 @@
                             </tr>
                             <tr>
                                 <td>Luke Skywalker</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -187,7 +147,7 @@
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -202,13 +162,13 @@
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                             </tr>
                             <tr>
                                 <td>Boba Fet</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class= "form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -227,14 +187,14 @@
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                             </tr>
                             <tr>
                                 <td>Obi-Wan Kenobi</td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -247,8 +207,8 @@
                                 <td>92</td>
                                 <td>82</td>
                                 <td>86</td>
-                                <td>100</td>
-                                <td>100</td>
+                                <td><input class="form-control" value="100" /></td>
+                                <td>90</td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -259,7 +219,7 @@
                                 <td>98</td>
                                 <td>100</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -272,7 +232,7 @@
                                 <td>99</td>
                                 <td>100</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
@@ -285,14 +245,14 @@
                                 <td>100</td>
                                 <td>100</td>
                                 <td>100</td>
-                                <td><input value="100" /></td>
+                                <td><input class="form-control" value="100" /></td>
                                 <td>100</td>
                                 <td>100</td>
                             </tr>
                         </tbody>
-                    </table></td>
-                </tr>
-            </tbody>
-        </table>
+                    </table>
+                </div>
+            </div>
+         </div>
     </body>
 </html>

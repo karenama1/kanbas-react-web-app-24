@@ -1,0 +1,33 @@
+
+/* Set the width of the courses between 250 and 400 pixels */
+.col {
+    width: 250px;
+    max-width: 400px;
+}
+  
+/* Set the spacing between courses above and below between 30 and 40 pixels */
+.card {
+    margin-bottom: 30px;
+}
+
+/* Adjust the number of courses per row based on the window width */
+@media (min-width: 1200px) {
+    .row-cols-lg-4 > div {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .row-cols-lg-4 > div {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
+    }
+}
+
+@media (max-width: 992px) {
+    .row-cols-lg-4 > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
