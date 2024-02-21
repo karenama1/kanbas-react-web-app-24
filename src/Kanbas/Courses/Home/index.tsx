@@ -83,13 +83,7 @@ function Home() {
             </p>
           ))}
         </div>
-
-        <div className="d-lg-block">
-          <button className="btn btn-outline-dark rounded-0 mb-4">
-            <i className="fa fa-eye" aria-hidden="true"></i> Student View
-          </button>
-        </div>
-
+        
         {Object.keys(linksMap).map((key) => (
           <ul key={key} className="list-group mt-1 rounded-0">
             <li className="list-group-item list-group-item-secondary">
