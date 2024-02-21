@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import "./index.css";
-import "./style.css";
 import { FaRegUserCircle, FaTachometerAlt, FaBook, FaRegCalendarAlt, FaInbox, FaClock, FaCreativeCommons, FaDesktop, FaQuestion, FaUniversity } from 'react-icons/fa';
 
 function KanbasNavigation() {

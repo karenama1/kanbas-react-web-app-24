@@ -1,8 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import  courses  from "../Database/courses.json"
+import { courses } from "../Database";
+import "./index.css";
+import "../styles.css";
+import "../../libs/font-awesome/css/font-awesome.css";
+import "../../libs/bootstrap/bootstrap.min.css";
 
 function Dashboard() {
+  // const courses = db.courses;
   return (
     <div className="container">
       <h1>Dashboard</h1>              <hr />

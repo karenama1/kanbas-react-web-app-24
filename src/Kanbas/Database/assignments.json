@@ -1,19 +1,11 @@
 [
-  { "_id": "A101", "title": "A1-HTML", "course": "CS1234" },
-  { "_id": "A102", "title": "A2-CSS", "course": "CS1234" },
-  { "_id": "A103", "title": "A3-BootStrap", "course": "CS1234" },
-  { "_id": "A201", "title": "A1-Web", "course": "CS5610" },
-  { "_id": "A202", "title": "A2-React", "course": "CS5610" },
-  { "_id": "A203", "title": "A3-JavaScript", "course": "CS5610" },
-  { "_id": "A301", "title": "A1-Tree", "course": "CS5800" },
-  { "_id": "A302", "title": "A2-DP", "course": "CS5800" },
-  { "_id": "A303", "title": "A3-Graph", "course": "CS5800" },
-  { "_id": "A401", "title": "A1-SQL query", "course": "CS5200" },
-  { "_id": "A402", "title": "A2-Relational model", "course": "CS5200" },
-  { "_id": "A403", "title": "A3-MVC Design", "course": "CS5200" },
-  { "_id": "A501", "title": "A1-Probability", "course": "CS5002" },
-  { "_id": "A502", "title": "A2-Function", "course": "CS5002" },
-  { "_id": "A601", "title": "A1-Python", "course": "CS5001" },
-  { "_id": "A602", "title": "A1-Java", "course": "CS5001" },
-  { "_id": "A603", "title": "A3-C", "course": "CS5001" }
+  { "_id": "A101", "title": "Propulsion Assignment", "course": "RS101" },
+  { "_id": "A102", "title": "Combustion Analysis", "course": "RS101" },
+  { "_id": "A103", "title": "Nozzle Design Project", "course": "RS101" },
+  { "_id": "A201", "title": "Aerodynamics Quiz", "course": "RS102" },
+  { "_id": "A202", "title": "Flow Analysis", "course": "RS102" },
+  { "_id": "A203", "title": "Heating Analysis", "course": "RS102" },
+  { "_id": "A301", "title": "Structural Design Task", "course": "RS103" },
+  { "_id": "A302", "title": "Orbital Calculations", "course": "RS103" },
+  { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103" }
 ]
