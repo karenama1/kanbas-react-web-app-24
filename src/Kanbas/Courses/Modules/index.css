@@ -5,7 +5,37 @@
   margin: 0px;
   padding: 0px;
 }
+.module-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  
+}
+.module-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
+.module-content {
+  flex-grow: 1;
+}
+
+.module-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: white;
+}
 .wd-modules {
   margin: 5px;
   margin-left: 120px;

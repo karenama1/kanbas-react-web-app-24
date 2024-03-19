@@ -14,7 +14,10 @@ body * {
 div a{
     text-decoration: none;
 }
-
+.textareaCustom {
+    width: 182px;
+    height: 30px;
+}
 .wd-fg-color-black { 
     color: black; 
 }

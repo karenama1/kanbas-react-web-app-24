@@ -45,7 +45,7 @@ function Grades() {
       <table className="table table-striped mt-4">
         <thead>
           <th>Student Name</th>
-          {assignments.map((assignment) => (<th>{assignment.title}</th>))}
+          {/* {assignments.map((assignment) => (<th>{assignment.title}</th>))} */}
         </thead>
         <tbody>
           {enrollments.map((enrollment) => {
