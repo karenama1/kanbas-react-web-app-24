@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import  modules from "../../Database/module.json";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
@@ -12,64 +12,43 @@ import {
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./reducer";
 import { KanbasState } from "../../store";
-
-// 
+import * as client from "../Modules/client";
 
 
 function ModuleList() {
+   const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
   const { courseId } = useParams();
+  useEffect(() => {
+    client.findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [courseId]);
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
   // const [moduleList, setModuleList] = useState(() => modules.filter((module) => module.course === courseId));
   const moduleList = useSelector((state: KanbasState) => 
   state.modules.modules);
  const module = useSelector((state: KanbasState) => 
   state.modules.module);
  const dispatch = useDispatch();
-  // const modulesList: Module[] = modules.filter((module) => module.course === courseId);
-  // const [selectedModule, setSelectedModule] = useState(modulesList[0]);
-  // const [module, setModule] = useState({
-  //   _id:'',
-  //   name: "New Module",
-  //   description: "New Description",
-  //   course: courseId,
-  // });
-  // const addModule = (module: any) => {
-  //   const newModule = { ...module,
-  //     _id: new Date().getTime().toString() };
-  //   const newModuleList = [newModule, ...moduleList];
-  //   setModuleList(newModuleList);
-  // };
-  // const deleteModule = (moduleId: string, event: React.MouseEvent<HTMLButtonElement>) => {
-  //   event.preventDefault(); // Prevent default action
-  //   event.stopPropagation(); // Stop event from bubbling up
-
-  //   const newModuleList = moduleList.filter(
-  //     (mod) => mod._id !== moduleId );
-  //   setModuleList(newModuleList);
-  // };
-  // const updateModule = () => {
-  //   // You might want to check if 'module' has a valid '_id' before doing the update
-  //   if (!module._id) return;
-  
-  //   setModuleList((currentModuleList) =>
-  //     currentModuleList.map((m) => {
-  //       if (m._id === module._id) {
-  //         // If the module is the one we're editing, return the updated module
-  //         // Also, preserve or handle the 'lessons' property correctly
-  //         return {
-  //           ...m, // spread the properties of the current module
-  //           name: module.name, // update the name
-  //           description: module.description, // update the description
-  //           // if there are any other properties that need to be updated, do so here
-  //         };
-  //       } else {
-  //         // Otherwise, return the module as is
-  //         return m;
-  //       }
-  //     })
-  //   );
-  // };  
   return (
     <div className="container-fluid">
       <div className="d-flex justify-content-end gap-1 mb-2">
@@ -110,13 +89,13 @@ function ModuleList() {
         <button 
          type="button"
          className="btn btn-success float-end"
-         onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+         onClick={handleAddModule}>
           Add
         </button>
         <button 
          type="button"
          className="btn btn-primary float-end"
-         onClick={() => dispatch(updateModule(module))}>
+         onClick={handleUpdateModule}>
           Update
         </button>
     </div>
@@ -124,8 +103,8 @@ function ModuleList() {
 
     <ul className="list-group wd-modules">
       {moduleList
-        .filter((module) => module.course === courseId)
-        .map((module, index) => (
+        .filter((module: any) => module.course === courseId)
+        .map((module: any, index) => (
           <li key={module._id} className="list-group-item">
             <button
               type="button"
@@ -136,7 +115,7 @@ function ModuleList() {
             <button
                type="button"
                className="btn btn-danger float-end"
-              onClick={() => dispatch(deleteModule(module._id))}>
+              onClick={() => handleDeleteModule(module._id)}>
               Delete
             </button>
             <h3>{module.name}</h3>

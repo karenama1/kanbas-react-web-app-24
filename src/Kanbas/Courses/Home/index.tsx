@@ -55,7 +55,7 @@ function Home() {
 
   return (
     <div className="row">
-      <div className="col col-md-9">
+      <div className="col col-md-9 wd-flex-grouw-1">
         <ModuleList />
       </div>
 
@@ -64,6 +64,13 @@ function Home() {
         <button className="btn btn-outline-dark rounded-0 mb-4">
           <i className="fa fa-eye" aria-hidden="true"></i> Student View
         </button>
+        {Object.keys(linksMap).map((key: any) => (
+            <ul className="list-group mt-1 rounded-0">
+              <li key={key} className="list-group-item list-group-item-secondary">
+                <i className={linkToIconMap[key]}></i> <a className="wd-fg-color-black" href="#">{linksMap[key]}</a>
+              </li>
+            </ul>
+          ))}
        </div>
        <div className="mt-4">
           <b style={{ marginRight: 25 }}>To Do</b>
@@ -84,16 +91,16 @@ function Home() {
           ))}
         </div>
         
-        {Object.keys(linksMap).map((key) => (
+        {/* {Object.keys(linksMap).map((key) => (
           <ul key={key} className="list-group mt-1 rounded-0">
             <li className="list-group-item list-group-item-secondary">
               <i className={linkToIconMap[parseInt(key)]}></i>{" "}
               <a className="wd-fg-color-black" href="#">
-                {linksMap[parseInt(key)]}
-              </a>
-            </li>
-          </ul>
-        ))}
+                {linksMap[parseInt(key)]} */}
+              {/* </a> */}
+            {/* </li>
+          </ul> */}
+        {/* ))} */}
       </div>
     </div>
   );

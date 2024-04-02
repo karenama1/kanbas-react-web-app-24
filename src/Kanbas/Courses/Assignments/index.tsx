@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { selectAssignment, deleteAssignment } from "../Assignments/assignmentsReducer";
+import { setAssignments, addAssignment, deleteAssignment, updateAssignment, selectAssignment } from "../Assignments/assignmentsReducer";
 import { KanbasState } from "../../store";
 import "../../../libs/font-awesome/css/font-awesome.css";
 import "../../../libs/bootstrap/bootstrap.min.css";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import * as service from "../Assignments/service";
+
 
 function Assignments() {
+  // const { courseId } = useParams();
   const { courseId } = useParams();
-  const assignments = useSelector((state: KanbasState) => state.assignments.assignments);
-  const courseAssignments = assignments.filter(assignment => assignment.course === courseId);
-  const dispatch = useDispatch();
+  const { assignmentId } = useParams();
+  useEffect(() => {
+    service.findAssignmentsForCourse(courseId)
+      .then((assignments) =>
+        dispatch(setAssignments(assignments))
+    );
+  }, [courseId]);
+  
+  const handleAddAssignment = () => {
+    service.createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  };
 
-  const handleDelete = (assignmentId: string) => {
+  const handleUpdateAssignment = async () => {
+    const status = await service.updateAssignment(assignmentId, assignment);
+    dispatch(updateAssignment(assignment));
+  };
+
+  const handleDeleteAssignment = (assignmentId: string) => {
+    service.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    })
     confirmAlert({
       title: 'Confirm Deletion',
       message: 'Are you sure you want to delete this assignment?',
@@ -30,6 +51,10 @@ function Assignments() {
       ],
     });
   };
+  const assignmentList = useSelector((state: KanbasState) => state.assignments.assignments);
+  // const courseAssignments = assignments.filter((assignment:any) => assignment.course === courseId);
+  const dispatch= useDispatch();
+  const assignment = useSelector((state: KanbasState) => state.assignments.assignment);
 
   return (
     <div>
@@ -45,12 +70,41 @@ function Assignments() {
         </div>
       </div>
       <hr />
+{/*        
+        <input
+        type="text"
+        value={assignment.course}
+        placeholder="Assignment number"
+        onChange={(e) => dispatch(setAssignments({ ...assignment, name: e.target.value }))}
+        className="module-name-input"
+      />
+      <input
+        type="text"
+        value={assignment.name}
+        placeholder="assignment name"
+        onChange={(e) => dispatch(setAssignments({ ...assignment, description: e.target.value }))}
+        className="module-description-input"
+      />
+
+      {/* Buttons */}
+        {/* <button 
+         type="button"
+         className="btn btn-success float-end"
+         onClick={handleAddAssignment}>
+          Add
+        </button>
+        <button 
+         type="button"
+         className="btn btn-primary float-end"
+         onClick={handleUpdateAssignment}>
+          Update
+        </button> */}
 
       {/* The list of assignments */}
       <div className="list-group">
         <ul className="list-group mb-5 rounded-0">
           {/* List items */}
-          {courseAssignments.map((assignment) => (
+          {assignmentList.filter((assignment: any) => assignment.course === courseId).map((assignment:any, index) => (
             <li key={assignment._id} className="list-group-item" style={{ borderLeft: "5px solid green" }}>
               <div className="row">
                 <div className="col col-1 mt-2" >
@@ -60,12 +114,25 @@ function Assignments() {
                 </div>
                 <div className="col">
                   <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="wd-fg-color-black">
-                    {assignment.name} - {assignment.description} <br />
+                    {assignment.course} - {assignment.title} <br />
                     <span className="wd-fg-color-red">Multiple Modules</span> | <b>Due</b> {assignment.dueDate} | {assignment.points} pts
-                  </Link>
+                  </Link>     
                 </div>
                 <div className="col">
-                  <button className="btn btn-danger float-end me-2" onClick={() => handleDelete(assignment._id)}>Delete</button>
+                {/* Buttons */}
+                {/* <button
+                    type="button"
+                    className="btn btn-success me-2 float-end"
+                    onClick={handleAddAssignment}>
+                      Add
+                    </button> */}
+                    {/* <button 
+                    type="button"
+                    className="btn btn-primary me-2 float-end"
+                    onClick={handleUpdateAssignment}>
+                      Edit
+                   </button> */}
+                  <button className="btn btn-danger float-end me-2" onClick={() => handleDeleteAssignment(assignment._id)}>Delete</button>
                 </div>
               </div>
             </li>
