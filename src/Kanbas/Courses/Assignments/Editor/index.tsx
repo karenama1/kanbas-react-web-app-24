@@ -23,7 +23,14 @@ function AssignmentEditor() {
     if (assignmentId) {
       // Fetch the specific assignment and populate the form
       service.findAssignmentById(assignmentId).then((data) => {
-        setAssignment(data);
+        setAssignment({
+          title: data.title || "",
+          description: data.description || "",
+          points: data.points || "",
+          dueDate: data.dueDate || "",
+          availableFrom: data.availableFrom || "",
+          availableUntil: data.availableUntil || "",
+        });
       }).catch((error) => {
         console.error("Failed to fetch assignment", error);
         // Optionally navigate back or show an error
