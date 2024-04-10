@@ -31,7 +31,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
   addNewCourse: () => void; deleteCourse: (course: any) => void;
   updateCourse: () => void; }) { 
   return (
-    <div className="container">
+    <div className="wd-dashboard-grid">
       <h1>Dashboard</h1>              <hr />
       <h2>Published Courses (12)</h2> <hr />
       <h5>Course</h5>
