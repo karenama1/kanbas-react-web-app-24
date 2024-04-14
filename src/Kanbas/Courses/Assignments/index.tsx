@@ -16,20 +16,26 @@ function Assignments() {
   const { assignmentId } = useParams();
   useEffect(() => {
     service.findAssignmentsForCourse(courseId)
-      .then((assignments) =>
-        dispatch(setAssignments(assignments))
-    );
+      .then((assignments) => {
+        console.log('Assignments fetched: ', assignments);
+      dispatch(setAssignments(assignments));
+      })
+      .catch((error) => {
+        console.error('error fetching assignments: ',error);
+      });
   }, [courseId]);
   
-  const handleAddAssignment = () => {
-    service.createAssignment(courseId, assignment).then((assignment) => {
+  
+  const handleAddAssignment = () => async () => {
+
+    const status = service.updateAssignment(courseId, assignmentState).then((assignment) => {
       dispatch(addAssignment(assignment));
     });
   };
 
   const handleUpdateAssignment = async () => {
-    const status = await service.updateAssignment(assignmentId, assignment);
-    dispatch(updateAssignment(assignment));
+    const status = await service.updateAssignment(courseId ,assignmentState);
+    dispatch(updateAssignment(assignmentState));
   };
 
   const handleDeleteAssignment = (assignmentId: string) => {
@@ -54,7 +60,7 @@ function Assignments() {
   const assignmentList = useSelector((state: KanbasState) => state.assignments.assignments);
   // const courseAssignments = assignments.filter((assignment:any) => assignment.course === courseId);
   const dispatch= useDispatch();
-  const assignment = useSelector((state: KanbasState) => state.assignments.assignment);
+  const assignmentState = useSelector((state: KanbasState) => state.assignments.assignment);
 
   return (
     <div>
@@ -114,7 +120,7 @@ function Assignments() {
                 </div>
                 <div className="col">
                   <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="wd-fg-color-black">
-                    {assignment.course} - {assignment.title} <br />
+                     {assignment.title} <br />
                     <span className="wd-fg-color-red">Multiple Modules</span> | <b>Due</b> {assignment.dueDate} | {assignment.points} pts
                   </Link>     
                 </div>
@@ -132,7 +138,10 @@ function Assignments() {
                     onClick={handleUpdateAssignment}>
                       Edit
                    </button> */}
-                  <button className="btn btn-danger float-end me-2" onClick={() => handleDeleteAssignment(assignment._id)}>Delete</button>
+                        <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="btn btn-primary float-end">
+                               Edit
+                          </Link>
+                        <button className="btn btn-danger float-end me-2" onClick={() => handleDeleteAssignment(assignment._id)}>Delete</button>
                 </div>
               </div>
             </li>

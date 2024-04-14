@@ -9,10 +9,12 @@ const initialState= {
   assignment :  { _id: "A102", name: "Combustion Analysis", points:100, dueDate:"2023-10-31", description:"This is an assignment.", course: "RS101" },
 };
 
+
 export const assignmentsSlice = createSlice({
   name: 'assignments',
   initialState,
   reducers: {
+
     setAssignments : (state, action) => {
       state.assignments = action.payload;
     },

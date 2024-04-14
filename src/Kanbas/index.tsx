@@ -12,7 +12,7 @@ import Home from "./Courses/Home";
 import Account from "./Account";
 
 
-const API_BASE = process.env.REACT_APP_API_BASE;
+const API_BASE = process.env.REACT_APP_API_BASE_URL;
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
   const COURSES_API = `${API_BASE}/api/courses`;
@@ -60,7 +60,7 @@ function Kanbas() {
       <Route path="/" element={<Navigate to="Dashboard" />} />
       <Route path="Account" element={<Account/>} />
 
-      <Route path="Account" element={<h1>Account</h1>} /> 
+      <Route path="Account/*" element={<Account />} /> 
       <Route path="Dashboard" element={<Dashboard 
                         courses={courses}
                         course={course}
@@ -68,7 +68,7 @@ function Kanbas() {
                         addNewCourse={addNewCourse}
                         deleteCourse={deleteCourse}
                         updateCourse={updateCourse}/>} />
-      <Route path="Courses/:courseId/*" element={<Courses courses={courses} />} />
+      <Route path="Courses/:courseId/*" element={<Courses/>} />
       <Route path="Courses" element={<Home/>} />
         <Route path="Assignments/new" element={<AssignmentEditor />} />
     </Routes>

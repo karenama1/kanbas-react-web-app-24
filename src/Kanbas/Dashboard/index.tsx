@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as db from "../Database";
 import "./index.css";
-// import "../styles.css";
+import "../styles.css";
 import "../../libs/font-awesome/css/font-awesome.css";
 import "../../libs/bootstrap/bootstrap.min.css";
 
@@ -50,7 +50,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
         Update
       </button>
       <div className="row">
-        <div className="row row-cols-1 row-cols-md-5 g-10">
+        <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
             <div key={course._id} className="col" style={{ width: 300 }}>
               <div className="card">

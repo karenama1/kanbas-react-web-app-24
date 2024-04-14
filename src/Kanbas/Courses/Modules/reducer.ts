@@ -3,10 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-  modules: [],
-  module: { _id:"New id", name: "New Module 123", description: "New Description", module:"New Module"},
-};
-
+  modules: [{ _id:"", name: "", description: "", course:"",lessons:[]}],
+  module: {name:"", lessons: []},
+}
 
 const modulesSlice = createSlice({
   name: "modules",
@@ -39,10 +38,13 @@ const modulesSlice = createSlice({
     setModule: (state, action) => {
       state.module = action.payload;
     },
+    resetModuleState: (state) => {
+      state.module = {name: "", lessons: []};
+      },
   },
 });
 
 
 export const { addModule, deleteModule,
-  updateModule, setModule, setModules } = modulesSlice.actions;
+  updateModule, setModule, setModules, resetModuleState } = modulesSlice.actions;
 export default modulesSlice.reducer;

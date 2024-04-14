@@ -6,6 +6,20 @@ export interface KanbasState {
     assignments: ReturnType<typeof assignmentsReducer>;
 }
 
+export type moduleType = {
+  _id: string;
+  name: string;
+  description: string;
+  course: string;
+  lessons: moduleLessonType[];
+};
+
+export type moduleLessonType = {
+  _id: string;
+  name: string;
+  description: string;
+  module: string;
+};
 const store = configureStore({
   reducer: {
     modules:modulesReducer,

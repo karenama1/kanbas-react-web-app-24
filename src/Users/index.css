@@ -1,0 +1,49 @@
+.container-fluid {
+    display: flex;
+    flex-direction: column; /* Stack them vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: left; /* Center-align items vertically */
+    height: 100vh; /* Take full viewport height */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between form fields */
+}
+
+.form label {
+    font-weight: bold;
+}
+
+.form input, 
+.form select, 
+.form button {
+  padding: 8px;
+  margin-bottom: 8px; /* Space after each input */
+   border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /*Include padding and border in the element's total width and height */
+}
+
+
+/* Style for the button specifically, if you have one */
+.form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group { /* Assume this is the class for the div wrapping your input and button */
+    display: flex;
+    flex-direction: row; /* Line them up horizontally */
+    width: 100%; /* Take the full width of the parent container */
+    max-width: 400px; /* Don't let them grow beyond 400px */
+    gap: 8px; /* Put some space between the input and the button */
+}
+  
+.input-field, .submit-button {
+    flex: 1; /* Let input and button take up an equal amount of space */
+}
+  

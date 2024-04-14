@@ -1,6 +1,6 @@
 .vscode/
 .idea/
-
+.env/
 # macOS system file
 .DS_Store
 
