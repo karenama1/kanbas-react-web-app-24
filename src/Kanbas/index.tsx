@@ -12,7 +12,7 @@ import Home from "./Courses/Home";
 import Account from "./Account";
 
 
-const API_BASE = process.env.REACT_APP_API_BASE_URL;
+const API_BASE = "https://kanbas-node-server-app-9.onrender.com/";
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
   const COURSES_API = `${API_BASE}/api/courses`;
